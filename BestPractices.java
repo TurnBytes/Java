@@ -2,14 +2,15 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import TheMethyStuff.*;
-import TheValidator.*;
+//import TheValidator.*;
+import TheValidator.InputValidation;
 
 
 public class BestPractices {
     
     public String SubjectName;
     public int Marks;
-    public char Grade;
+    //public char Grade;
     
 
   
@@ -19,6 +20,7 @@ public class BestPractices {
 
         BestPractices std = new BestPractices();
         MethyStuff maths = new MethyStuff();//
+        InputValidation valid = new InputValidation();
         //maths.CalculatePercentage(100);
         
         Scanner sc = new Scanner(System.in);
@@ -45,6 +47,7 @@ public class BestPractices {
                     flag = true;
                     continue;
                 }
+            sc.close();
             maths.CalculatePercentage(std.Marks);
             System.out.println(std.SubjectName+" Grade: "+maths.Grade);
             break;
